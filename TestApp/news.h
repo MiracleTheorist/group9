@@ -40,7 +40,8 @@ public:
 /**
   @brief Constructor that takes the given parent widget and displays a news feed inside it, can be updated on button click
   @author Stacey Gunderson, Alison Lee
-  @param QQuickWidget parent widget to display the news media blog in
+  @return a newsfeed object
+  @param parent The QQuickWidget to display the news media blog in
  **/
         news(QQuickWidget*parent = nullptr);
 
@@ -48,7 +49,6 @@ public slots:
 /**
   @brief Upon button click signal, reloads the url to refresh what is on the page
   @author Stacey Gunderson, Alison Lee
-  @return void
  **/
     void on_reload();
 
