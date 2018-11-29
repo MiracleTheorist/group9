@@ -1,5 +1,6 @@
 /**
- @brief This class takes a given parent QQuickWidget and displays a news media blog in it
+ @brief This class takes a given parent QQuickWidget and displays a news feed blog in it
+ @bug May throw warnings and errors to console about missing sync tokens, will not crash and everything works nicely on the front end
  @author Stacey Gunderson, Alison Lee
  */
 
@@ -24,20 +25,35 @@
 class news: public QObject
 {
     Q_OBJECT
-    //Creates a news media browser in the widget given
+    //Creates a news browser in the widget given
 private:
-    QWebEngineView *wv; //The widget to use to display news media
-    QPushButton *reloadbutton; //The button that takes refresh clicks
+/**The widget to use to display the newsfeed */
+    QWebEngineView *wv;
+/**The button that takes refresh clicks */
+    QPushButton *reloadbutton;
+/**The style to give to the button to make it visible */
     QString stylebutton = "background-color: white; color: black";
+/**The url to load the feed */
     QString url;
 
 public:
+/**
+  @brief Constructor that takes the given parent widget and displays a news feed inside it, can be updated on button click
+  @author Stacey Gunderson, Alison Lee
+  @return a newsfeed object
+  @param parent The QQuickWidget to display the news media blog in
+ **/
         news(QQuickWidget*parent = nullptr);
 
 public slots:
+/**
+  @brief Upon button click signal, reloads the url to refresh what is on the page
+  @author Stacey Gunderson, Alison Lee
+ **/
     void on_reload();
 
 signals:
+/**Will signal to reload the newsfeed when the button is pressed*/
     void reload();
 };
 
