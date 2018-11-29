@@ -1,7 +1,6 @@
 /**
   @brief This class takes a given parent QQuickWidget and displays a news feed
-  @bug May throw warnings and errors to console about missing sync tokens, will not crash
-  Everything works nicely on the front end
+  @bug May throw warnings and errors to console about missing sync tokens, will not crash and everything works nicely on the front end
   @author Stacey Gunderson, Alison Lee
   **/
 
@@ -10,7 +9,6 @@
 /**
   @brief Upon button click signal, reloads the url to refresh what is on the page
   @author Stacey Gunderson, Alison Lee
-  @return void
  **/
 void news::on_reload()
 {
@@ -22,7 +20,8 @@ void news::on_reload()
 /**
   @brief Constructor that takes the given parent widget and displays a news media blog inside it, can be updated on button click
   @author Stacey Gunderson, Alison Lee
-  @param QQuickWidget parent widget to display the news media blog in
+  @return A newsfeed object
+  @param parent QQuickWidget to display the news media blog in
  **/
 news::news(QQuickWidget *parent)
 {
