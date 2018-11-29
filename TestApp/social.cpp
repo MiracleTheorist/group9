@@ -22,6 +22,7 @@ void social::on_reload()
 /**
   @brief Constructor that takes the given parent widget and displays a social media blog inside it, can be updated on button click
   @author Stacey Gunderson, Alison Lee
+  @return social a social object
   @param QQuickWidget parent widget to display the social media blog in
  **/
 social::social(QQuickWidget *parent)
@@ -43,6 +44,7 @@ social::social(QQuickWidget *parent)
     reloadbutton->setGeometry(494,-1,165,32); //Positions the overlay to the right to block less text
     QObject::connect(reloadbutton, SIGNAL(clicked()), this, SLOT(on_reload()));
 
+    //Creates a textbox to input usernames in, defaults 330hno and top right corner with the blue+white style
     urlbox = new QLineEdit("330hno", parent);
     urlbox->setGeometry(494,30,165,31);
     urlbox->setStyleSheet(style);
