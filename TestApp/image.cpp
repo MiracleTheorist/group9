@@ -8,6 +8,7 @@
 
 /**
   @brief This class takes a given QQuickWidget and sets up a label to call an image refresh to load the picture name
+  @param parent The widget to make parent of this
   @author Stacey Gunderson, Alison Lee
   **/
 image::image(QQuickWidget *parent)
@@ -27,9 +28,12 @@ image::image(QQuickWidget *parent)
  */
 void image::update()
 {
+    //Pulls the image name from the picturename instance
     picturename::instance();
     QString name = picturename::instance().get_picture();
+    //Adds the name to a path so it can be pulled from the image resourcres
     QString link = "://" + name +".jpg";
+    //Makes the path a string
     QImage* thing = new QImage(link);
 
     //Checks if the object exists and if not tries to load the image as a png
@@ -46,7 +50,7 @@ void image::update()
         }
         else
         {
-            //Scales the image to fit the label without breaking the aspect ratio
+            //Scales the image to fit the label without breaking the aspect ratio, fixed size
             QPixmap pix = QPixmap::fromImage(*thing);
             pix = pix.scaled(label->size(),Qt::KeepAspectRatio);
             label->setPixmap(pix);
@@ -54,28 +58,12 @@ void image::update()
     }
     else
     {
-        //Scales the image to fit the label without breaking the aspect ratio
+        //Scales the image to fit the label without breaking the aspect ratio, fixed size
         QPixmap pix = QPixmap::fromImage(*thing);
         pix = pix.scaled(label->size(),Qt::KeepAspectRatio);
         label->setPixmap(pix);
     }
-
+  //Shows the label
     label->show();
 }
 
-//No longer needed with resource.qrc
-//QCoreApplication::applicationDirPath(); Potentially useful to implement relative path if it was the same directory
-//filename = filename + "rain.jpg";
-/*
-if(pix.load(filename))
-{
-    //Scales the image to fit within the size of label while keeping aspect ratio
-    pix = pix.scaled(label->size(),Qt::KeepAspectRatio);
-    label->setPixmap(pix);
-    //---------------------------------------
-
-}
-else //Error displayed to the widget if it failed to find image
-{
-    label->setText(filename);
-} */
