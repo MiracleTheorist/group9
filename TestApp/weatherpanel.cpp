@@ -43,7 +43,7 @@ int weatherpanel::getWeatherID(){
 }
 /**
  * @brief sets weatherID to an integer representing the type of weather
- * @param weatherID integer that represents thet type of weather
+ * @param toSet integer that represents thet type of weather
  * @author Thomas Grummett
  */
 void weatherpanel::setWeatherID(int toSet){
@@ -84,7 +84,7 @@ void weatherpanel::setWeather(QString weatherIn){
 }
 /**
  * @brief sets temperature to a QString describing the temperature
- * @param temperature QString that describes the temperature
+ * @param tempIn QString that describes the temperature
  * @author Thomas Grummett
  */
 void weatherpanel::setTemp(QString tempIn){
