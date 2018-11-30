@@ -44,7 +44,7 @@ public:
   @brief Constructor that takes the given parent widget and displays a social media blog inside it, can be updated on button click
   @author Stacey Gunderson, Alison Lee
   @return A social object
-  @param QQuickWidget parent widget to display the social media blog in
+  @param parent QQuickWidget to display the social media blog in
  **/
         social(QQuickWidget*parent = nullptr);
 
