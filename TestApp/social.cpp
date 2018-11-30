@@ -23,7 +23,7 @@ void social::on_reload()
   @brief Constructor that takes the given parent widget and displays a social media blog inside it, can be updated on button click
   @author Stacey Gunderson, Alison Lee
   @return social a social object
-  @param QQuickWidget parent widget to display the social media blog in
+  @param parent QQuickWidget to display the social media blog in
  **/
 social::social(QQuickWidget *parent)
 {
