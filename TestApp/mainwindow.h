@@ -1,6 +1,6 @@
 /**
   @brief This class takes a given QQuickWidget and displays an image given the absolute path
-  @author Stacey Gunderson, Alison Lee
+  @author Meghan Hannon
   **/
 
 #ifndef MAINWINDOW_H
@@ -20,10 +20,19 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+/** 
+  @brief constructorfor MainWindow
+  @return a MainWindow 
+  @param parent Qwidget widget to
+**/ 
     explicit MainWindow(QWidget *parent = nullptr);
+/**
+  @brief destructor for MainWindow
+**/
     ~MainWindow();
 
 private:
+/**The user interface object for MainWindow */
     Ui::MainWindow *ui;
 };
 
