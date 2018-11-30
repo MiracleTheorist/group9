@@ -34,6 +34,7 @@ picturename::picturename()
 
 /**
    @brief Sets the QString for the picture name to the given QString and notifies observers
+   @param link The string name to set for the picture
    @author Stacey Gunderson, Alison Lee
  */
 void picturename::set_picture(QString link)
@@ -44,6 +45,7 @@ void picturename::set_picture(QString link)
 
 /**
    @brief Adds an observer to the list, and creates a signal connection
+   @param obj The image object to add to the observer list
    @author Stacey Gunderson, Alison Lee
  */
 void picturename::add_observer(image* obj)
@@ -55,6 +57,7 @@ void picturename::add_observer(image* obj)
 /**
    @brief Removes an observer from the list
    @author Stacey Gunderson, Alison Lee
+   @param obj the image object to remove from the list
  */
 void picturename::remove_observer(image* obj)
 {
@@ -64,6 +67,7 @@ void picturename::remove_observer(image* obj)
 
 /**
    @brief Returns the QString with the name of the picture
+   @return The name of the image stored
    @author Stacey Gunderson, Alison Lee
  */
 QString picturename::get_picture()
