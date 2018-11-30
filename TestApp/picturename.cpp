@@ -10,7 +10,7 @@ picturename* picturename::_instance = NULL;
 /**
    @brief Returns a pointer to a singleton instance of picturename, creates one if it does not exist
    @author Stacey Gunderson, Alison Lee
-   @return the pointer to the instance of picturename
+   @return picturename the pointer to the instance of picturename
  */
 picturename& picturename::instance()
 {
